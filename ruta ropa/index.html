@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+<meta charset="UTF-8">
+<title>Ej de AngularJS</title>
+</head>
+<body>
+<h1> <input type="text" id="rutazo" value="/media/import/fotosweb/{{marca}}/{{temporada}}/{{marca}}_{{temporada}}-{{numero}}_0.jpg" onClick="this.select();" style="width:100%;" readonly="readonly"/>
+<hr>
+<form>
+marca <input type="text" ng-model="marca">
+temporada <input type="text" ng-model="temporada">
+numero <input type="text" ng-model="numero">
+<hr>
+es
+<input type="text" id="p1"value="Alto: {{alto}}cm<br/>Alto: {{ancho}}cm<br/>Fondo: {{fondo}}cm" onClick="this.select();" style="width:100%;" readonly="readonly"/>
+<br/>
+en
+<input type="text" value="Heigth: {{alto}}cm<br/>Width: {{ancho}}cm<br/>depth: {{fondo}}cm" onClick="this.select();" style="width:100%;" readonly="readonly"/>
+Alto <input type="text" ng-model="alto">
+Ancho <input type="text" ng-model="ancho">
+Fondo <input type="text" ng-model="fondo">
+<hr>
+<button ng-click="loadData()">Refresh</button>
+</form>
+<img src="http://elitestore.es/media/import/fotosweb/{{marca}}/{{temporada}}/{{marca}}_{{temporada}}-{{numero}}_0.jpg" width="20%"/>
+<img src="http://elitestore.es/media/import/fotosweb/{{marca}}/{{temporada}}/{{marca}}_{{temporada}}-{{numero}}_1.jpg" width="20%"/>
+<img src="http://elitestore.es/media/import/fotosweb/{{marca}}/{{temporada}}/{{marca}}_{{temporada}}-{{numero}}_2.jpg" width="20%"/>
+<img src="http://elitestore.es/media/import/fotosweb/{{marca}}/{{temporada}}/{{marca}}_{{temporada}}-{{numero}}_3.jpg" width="20%"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+function copyToClipboard(element) {
+  var $temp = $("<input>")
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+}
+
+
+    $("#rutazo").bind({
+        copy : function(){
+            alert("hola que ase");
+        }
+    });
+
+
+</script>
+</body>
+</html>
+
